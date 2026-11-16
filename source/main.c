@@ -185,7 +185,7 @@ int main(int argc, char* argv[]) {
             "Press:\n\n"
             "UP/DOWN to change by 1   | LEFT/RIGHT to change selection\n"
             "L/ZL to quick decrease   | R/ZR to quick increase\n"
-            "A to confirm time        | Y to reset to current time (Cloudflare time server)\n"
+            "A to confirm time        | Y to reset to current time (Alibaba Cloud NTP)\n"
             "- to toggle quick launch | + to quit\n\n\n\n\n");
 
         int yearsChange = 0, monthsChange = 0, daysChange = 0, hoursChange = 0, minutesChange = 0;

@@ -11,10 +11,10 @@ Change NetworkSystemClock
 
 ## Functionality
 - Change time by day/hour
-- Contact a time server at `time.cloudflare.com` to set the time back to normal
+- Contact a time server at `ntp.aliyun.com` (Alibaba Cloud) to set the time back to normal
 
 ## Building
 Install [devkitA64 (along with libnx)](https://devkitpro.org/wiki/Getting_Started), and run `make` under the project directory.
 
 ## Disclaimer
-This program changes NetworkSystemClock, which may cause a desync between console and servers. Use at your own risk! It is recommended that you only use the changed clock while offline, and change it back as soon as you are connected (either manually or using the Cloudflare time server.)
+This program changes NetworkSystemClock, which may cause a desync between console and servers. Use at your own risk! It is recommended that you only use the changed clock while offline, and change it back as soon as you are connected (either manually or using the Alibaba Cloud time server.)

@@ -29,7 +29,7 @@ Result ntpGetTime(time_t *p_resultTime) {
     if (!nifmInternetIsConnected()) {
         printf(
             "You're not connected to the Internet.\n"
-            "Please run try again after connecting.\n");
+            "Please try again after connecting.\n");
         return -1;
     }
 
@@ -41,7 +41,7 @@ Result ntpGetTime(time_t *p_resultTime) {
     printf("Socket services initialized\n");
 
     int sockfd = -1;
-    const char *server_name = "time.cloudflare.com";
+    const char *server_name = "ntp.aliyun.com";
     const uint16_t port = 123;
 
     ntp_packet packet;
@@ -83,7 +83,7 @@ Result ntpGetTime(time_t *p_resultTime) {
         goto failed;
     }
 
-    printf("Connected to time.cloudflare.com with result: %x %x\nSending time request...\n", res, errno);
+    printf("Connected to %s with result: %x %x\nSending time request...\n", server_name, res, errno);
 
     errno = 0;
     if ((res = send(sockfd, (char *)&packet, sizeof(ntp_packet), 0)) < 0) {
