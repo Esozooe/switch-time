@@ -103,6 +103,9 @@ CFLAGS	:=	-g -Wall -O2 -ffunction-sections \
 
 CFLAGS	+=	$(INCLUDE) -D__SWITCH__
 
+# expose the version computed above (git describe + RELEASE_TYPE bump) to the sources
+CFLAGS	+=	-DAPP_VERSION_STR='"$(APP_VERSION)"'
+
 CXXFLAGS	:= $(CFLAGS) -fno-rtti -fno-exceptions
 
 ASFLAGS	:=	-g $(ARCH)

@@ -25,6 +25,12 @@ SOFTWARE. */
 
 #include "ntp.h"
 
+// Set by the Makefile from git describe (see APP_VERSION); this fallback is only
+// used when building with a plain compiler outside the project's build system.
+#ifndef APP_VERSION_STR
+#define APP_VERSION_STR "unknown"
+#endif
+
 bool setsysInternetTimeSyncIsOn() {
     Result rs = setsysInitialize();
     if (R_FAILED(rs)) {
@@ -158,7 +164,7 @@ bool toggleHBMenuPath(char* curPath, PadState* pad) {
 
 int main(int argc, char* argv[]) {
     consoleInit(NULL);
-    printf("SwitchTime v0.1.6\n\n");
+    printf("SwitchTime v%s\n\n", APP_VERSION_STR);
 
     padConfigureInput(8, HidNpadStyleSet_NpadStandard);
     PadState pad;
